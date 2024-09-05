@@ -1,0 +1,90 @@
+
+/* 이미지 상단 그라데이션 */
+.wallet-list {
+    position: relative;
+    height: 30vw;
+    overflow: hidden;
+}
+
+.text-content {
+    position: absolute;
+    z-index: 3; /* 텍스트가 이미지 위에 표시되도록 */
+    color: rgba(255, 255, 255, 0.9); /* 텍스트 색상 설정 */
+    padding: 20px;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.5); /* 텍스트 배경에 투명도 추가 */
+    top: 50px;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+}
+.image-container img {
+    position: absolute;
+    top: -150px; /* 이미지를 위로 이동시켜 윗부분 자름 */
+    right: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1; /* 이미지가 텍스트 뒤에 오도록 */
+}
+@media screen and (max-width:600px) {    
+    .text-content{width: 100%;}
+    .image-container img {
+        height: 400px;
+    }
+}
+
+
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2; /* 그라데이션이 이미지 위에 적용되도록 */
+}
+@media (max-width: 768px) {
+    .image-container::before {
+        display: none;
+    }
+}
+
+
+/* wallet-container */
+
+.wallet-container {
+    margin-top: 1%;
+    text-align: center; 
+    display: flex;
+    flex-wrap: wrap; /* 이미지들이 줄 바꿈 되도록 설정 */
+    justify-content: center; 
+    width: 100%; /* container 너비를 100%로 설정 */
+    max-width: 100%; /* container의 최대 너비를 100%로 설정 */
+    padding: 0 1%;
+}
+
+.wallet-container > div {
+    background: linear-gradient(#e1e1e1, white);
+    text-align: center;
+    margin:1% 0.5%;
+}
+
+
+.wallet-container > div > div > img {
+    width: 370px;
+    max-width: 100%; /* 이미지가 div 요소를 초과하지 않도록 설정 */
+    height: auto; /* 이미지 비율 유지 */
+}
+.wallet-container > div > div:nth-child(2) {
+    font-size: clamp(1rem, 1vw, 1rem);
+}
+.wallet-container > div > div:nth-child(3) {
+    font-size: clamp(0.9rem, 0.9vw, 0.9rem);
+}
+.wallet-container > div > div:nth-child(2) > span {
+   font-size: small;
+   color: #8a8a8a;
+   padding-left: 3px;
+
+}
