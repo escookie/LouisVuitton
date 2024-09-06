@@ -1,0 +1,65 @@
+section { width: 100%; } 
+.men-container { position: relative; width: 100%; } 
+
+.men-video { position: relative; width: 100%; height: 50vw; overflow: hidden; } 
+
+.men-video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; /* 부모 요소의 크기에 맞게 조절 */}
+
+.overlay-text { position: absolute; bottom: 5%;
+ left: 2%;
+ width: 50%;
+ text-align: left;
+ color: white;
+ z-index: 1;
+ padding: 10px;
+ box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */}
+.overlay-text>div:nth-child(1) { font-size: clamp(1.3rem,1.3vw,1.4rem); padding-bottom: 1%; }
+.overlay-text>div:nth-child(2) { font-size: clamp(0.9rem,1vw,1rem);}
+@media screen and (max-width:600px) {
+ .overlay-text{ width: 95%;}
+ .overlay-text>div:nth-child(1) { font-size: clamp(1rem,1.3vw,1.4rem);}
+.overlay-text>div:nth-child(2) { font-size: clamp(0.7rem,1vw,1rem);} 
+}
+
+/* video 위에 black gradation */
+.men-container::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%); z-index: 1; /* 그라데이션이 이미지 위에 적용되도록 */}
+
+/* img-text */
+.new-text { font-size: clamp(0.8rem, 0.9vw, 1rem); padding:0 0 10% 10%; } 
+/* img-container */
+.men-img-container { display: grid; grid-template-columns: repeat(4,1fr); flex-wrap: wrap; width: 100%; } 
+.men-img-container>div { background: linear-gradient(150deg, #e1d8cc, white); }
+.men-img-container { display: grid; grid-template-columns: repeat(4,1fr); flex-wrap: wrap; width: 100%; } 
+.men-img-container>div>div:nth-child(1) { text-align: right; } 
+.men-img-container>div>div:nth-child(1) i { padding: 5% 5% 0 0; transition: all 0.15s ease; } 
+.men-img-container>div>div:nth-child(1) i:hover { content: "\f004"; /* Font Awesome solid heart의 유니코드 */
+ font-family: "Font Awesome 6 Free"; /* Solid 버전의 아이콘을 불러오기 위한 설정 */
+ font-weight: 900; /* Solid 스타일 적용 */ 
+ color: rgba(0, 0, 0, 0.7); /* 빨간색, 투명도 50% 적용 */}
+
+
+
+.men-img-container>div img { width: 100%; height: auto; /* 높이를 자동으로 조정 */
+ display: block; /* 기본적으로 이미지의 여백 문제 해결 */}
+
+ /* section 5 */
+.more {
+    padding-top: 2%;
+    text-align: center;
+}
+.more button{
+    margin-top: 3%;
+    padding: 10px 50px;
+    border: 1px solid #515151;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 25px;
+    margin: 0 0.5%;
+    font-size: clamp(0.85rem, 0.85vw, 0.85rem);
+    transition: background-color 0.1s ease;
+}
+
+.more button:hover{
+    background-color: #515151;
+    color: #fff;
+}
