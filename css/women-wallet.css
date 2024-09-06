@@ -88,3 +88,26 @@
    padding-left: 3px;
 
 }
+
+ /* section 5 */
+ .more {
+    padding-top: 2%;
+    text-align: center;
+}
+.more button{
+    margin-top: 3%;
+    border: 1px solid #515151;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 11px 80px;
+    margin: 0 0.5%;
+    font-size: clamp(0.9rem, 0.9vw, 0.9rem);
+    transition: background-color 0.1s ease;
+}
+
+.more button:hover{
+    background-color: #515151;
+    color: #fff;
+}
+
+.pt1{padding-top: 1%;}
