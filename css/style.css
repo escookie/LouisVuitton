@@ -7,9 +7,20 @@
 .btn-dark { padding: 0.4rem 1rem 0.5rem 1rem; } 
 
 .form-control:focus { color: var(--bs-body-color); background-color: var(--bs-body-bg); border-color: #cbcbcb; outline: 0; box-shadow: 0 0 0 0.25rem rgba(157, 157, 157, 0.25); } 
-footer { background-color: black; color: white; transition: transform 0.05s ease-out; } 
+
+footer { background-color: black; color: white; transition: transform 0.05s ease-out;} 
 footer a { text-decoration: none; color: white; } 
-footer a:hover { color: #d2d2d2; } 
+footer a:hover { color: #d2d2d2; }
+
+@media (max-width: 768px) {
+    .second-line .col {
+      flex: 0 0 50%;
+      max-width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
 .first-line { border-bottom: 1px solid #392d23; } 
 .second-line a { color: white; text-decoration: none; } 
 .third-line { display: none; } 
